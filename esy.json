@@ -1,9 +1,14 @@
 {
   "dependencies": { "@opam/slug": "*", "ocaml": "4.12.0" },
-  "resolutions": { "@opam/slug": "link:./slug.opam" },
+  "resolutions": {
+    "@opam/slug": "link:./slug.opam",
+    "@reason-native/rely": "jfrolich/reason-native:rely.json#08085a4048974b06aaf3aab918b677b39dea3d18"
+  },
   "devDependencies": {
     "@opam/alcotest": "1.4.0",
     "@opam/ocaml-lsp-server": "1.7.0",
-    "@opam/yojson": "1.7.0"
+    "@opam/yojson": "1.7.0",
+    "@reason-native/rely": "*",
+    "@opam/reason": "*"
   }
 }

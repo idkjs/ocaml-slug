@@ -25,17 +25,17 @@ Slug.slugify "my string";;
 
 (* Custom separator *)
 Slug.slugify ?sep: "_" "my string";;
-- : string = "my_string" 
+- : string = "my_string"
 
 (* Retain uppercase *)
 Slug.slugify ?lowercase: false "My String";;
-- : string = "My-String" 
+- : string = "My-String"
 
 (* Use locale *)
 let with_vi = Slug.(Charmap.mk_charmap [Slug_data.base; Slug_data.vi]);;
 - : Charmap.t = <abstr>
 Slug.slugify ?charmap: with_vi "Đ";;
-- : string = "d" 
+- : string = "d"
 Slug.slugify "Đ";;
 - : string = "dj"
 
@@ -55,17 +55,17 @@ Slug.slugify("my string");
 
 /* Custom separator */
 Slug.slugify(~sep = "_", "my string");
-- : string = "my_string" 
+- : string = "my_string"
 
 /* Retain uppercase */
 Slug.slugify(~lowercase = false, "My String");
-- : string = "My-String" 
+- : string = "My-String"
 
 /* Use locale */
 let with_vi = Slug.(Charmap.mk_charmap([Slug_data.base, Slug_data.vi]));
 let with_vi : Charmap.t = <abstr>
 Slug.slugify(~charmap = with_vi, "Đ");
-- : string = "d" 
+- : string = "d"
 Slug.slugify("Đ");
 - : string = "dj"
 
@@ -75,6 +75,12 @@ let custom_map : Charmap.t = <abstr>
 
 Slug.slugify(~charmap = custom_map, "Mm");
 - : string = "zz"
+```
+## Building
+
+```sh
+esy dune build @all
+esy dune runtest
 ```
 
 ## Notice
@@ -86,4 +92,4 @@ Please send PRs about new locales to node-slugify.
 If you really need it, you can use a `custom_map` instead.
 
 ## License
-MIT. Data are downloaded from [node-slugify](https://github.com/simov/slugify) 
+MIT. Data are downloaded from [node-slugify](https://github.com/simov/slugify)
